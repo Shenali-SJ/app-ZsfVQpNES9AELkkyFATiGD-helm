@@ -1,0 +1,43 @@
+projectId: app-ZsfVQpNES9AELkkyFATiGD
+appName: bugzbunny
+description: This is a sample app description
+imageURL: Nope
+version: 1.0.0
+hostName: example.test
+clusterURL: https://kubernetes.default.svc
+clusterIPs:
+- 800.800.900
+- 790.890.789
+monitoring: true
+microservices:
+  CartService:
+    serviceName: cartservice
+    avgReplicas: 2
+    minReplicas: 2
+    maxReplicas: 5
+    dockerImage: shenalisj/com
+    containerPort: 8080
+  OrderService:
+    serviceName: orderservice
+    avgReplicas: 2
+    minReplicas: 2
+    maxReplicas: 2
+    dockerImage: shenalisj.com
+    containerPort: 44
+    serviceEvaluation:
+      kubeConfigType:
+      - statefulSetBased
+  UserService:
+    serviceName: userservice
+    avgReplicas: 3
+    minReplicas: 3
+    maxReplicas: 3
+    dockerImage: shenalisj.com
+    containerPort: 69
+evaluationResult:
+  language: Java
+  database: MySQL
+  microservices:
+  - CartService
+  - OrderService
+  - UserService
